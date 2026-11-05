@@ -1,0 +1,6 @@
+# Contoh FIKTIF dengan struktur yang sama seperti ioc.yaml dari stalkerware-indicators.
+# Untuk pemeriksaan sungguhan, unduh berkas resmi dari github.com/AssoEchap/stalkerware-indicators
+- name: ContohPemantau
+  type: stalkerware
+  packages:
+  - com.contoh.pemantau
