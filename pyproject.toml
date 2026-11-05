@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "antimata"
+version = "0.1.0"
+description = "Alat pertahanan privasi: cek indikasi stalkerware di Android, audit izin aplikasi, bersihkan metadata foto dan dokumen, plus daftar periksa keamanan"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = []
+keywords = ["privacy", "stalkerware", "security", "metadata", "android", "indonesia"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: End Users/Desktop",
+  "Topic :: Security",
+]
+
+[project.optional-dependencies]
+gambar = ["Pillow>=10"]
+dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.6", "mypy>=1.10", "Pillow>=10"]
+
+[project.scripts]
+antimata = "antimata.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F"]
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
