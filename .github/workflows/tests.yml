@@ -8,7 +8,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: ls -la src/antimata | cat -A
+      - run: python -c "import os; print(repr(os.listdir('src/antimata')))"
       - run: pip install ".[dev]"
-      - run: python -c "import antimata; print(antimata.__file__); print(antimata.__path__)"
+      - run: pip show -f antimata
       - run: pytest -q
