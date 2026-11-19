@@ -27,6 +27,7 @@ antimata = "antimata.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+namespaces = false
 
 [tool.ruff]
 line-length = 120
